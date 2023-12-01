@@ -1,8 +1,11 @@
 from fastapi import FastAPI
+import os
+from dotenv import load_dotenv
 import requests
 
+load_dotenv()
 # Récupère la clé d'API OpenAI à partir des variable
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # Crée une instance de l'application FastAPI
 app = FastAPI()
 
